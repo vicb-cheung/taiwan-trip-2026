@@ -95,6 +95,11 @@ section{scroll-margin-top:60px;margin-top:40px}
 .facts .warn{color:#a3401f}
 .addr{margin-top:10px;background:var(--sea-soft);border-radius:10px;padding:8px 12px;font-size:.92rem;font-weight:500}
 .hotel .btns{margin-top:auto;padding-top:14px}
+.ota{display:flex;flex-wrap:wrap;align-items:center;gap:6px;width:100%;margin-bottom:8px;padding-bottom:8px;border-bottom:1px dashed var(--line)}
+.ota-l{width:100%;font-size:.78rem;color:var(--muted);font-weight:700}
+.ota-btn{flex:1;text-align:center;border-radius:10px;padding:8px 10px;font-weight:700;font-size:.9rem;text-decoration:none;color:#fff}
+.ota-btn.trip{background:#287dfa}
+.ota-btn.agoda{background:#5a2d82}
 .choose{margin-top:12px;width:100%;border:2px dashed var(--sea);background:transparent;color:var(--sea);border-radius:12px;padding:9px;font:inherit;font-weight:700;cursor:pointer}
 .hotel.chosen .choose{background:var(--sea);color:#fff;border-style:solid}
 
@@ -123,6 +128,16 @@ section{scroll-margin-top:60px;margin-top:40px}
 .stamp .m{font-size:.85rem;opacity:.85}
 .stamp .w{margin-top:8px;font-size:.85rem;background:#ffffff26;border-radius:6px;padding:2px 6px;display:inline-block}
 .day-body{padding:18px 20px}
+.day-photos{display:grid;grid-template-columns:1fr;gap:8px;margin:12px 0 6px}
+.day-photos.two{grid-template-columns:3fr 2fr}
+.day-photo{position:relative;margin:0;border-radius:14px;overflow:hidden;aspect-ratio:16/9;max-height:300px;width:100%;background:#d9e3e2;box-shadow:0 6px 18px #0002}
+.day-photos.two .day-photo{aspect-ratio:auto;height:230px}
+.day-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.day-photo:hover img{transform:scale(1.04)}
+.day-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 8px;background:linear-gradient(transparent,#000a);color:#fff;font-weight:700;font-size:.95rem}
+.day-photo figcaption small{display:block;font-weight:400;font-size:.66rem;opacity:.8;margin-top:2px}
+.day-photo figcaption small a{color:#fff}
+@media(max-width:600px){.day-photos.two{grid-template-columns:1fr}.day-photos.two .day-photo{height:200px}}
 .day-body h3{font-size:1.25rem;margin-bottom:4px}
 .day-body .main{display:inline-block;font-size:.8rem;font-weight:700;background:var(--coral-soft);color:#a3401f;padding:2px 10px;border-radius:999px;margin-bottom:6px}
 .tl{list-style:none;margin:10px 0 0;padding:0}
@@ -268,7 +283,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
         </div>
         <div class="hotel-body">
           <h4>義大皇家酒店 · 山景客房</h4>
-          <div class="price">≈ HK$899／晚<small>公司處理・只作參考，唔計入「錢」 · 2晚 HK$1,797，含早餐連稅（Expedia）</small></div>
+          <div class="price">≈ HK$899／晚<small>2晚 HK$1,797，含早餐連稅（Expedia）</small></div>
           <ul class="facts">
             <li><span>🛁</span><span>有獨立浴缸，官網寫明</span></li>
             <li><span>📐</span><span>40㎡，一張大床</span></li>
@@ -279,6 +294,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
           </ul>
           <div class="addr">📍 高雄市大樹區學城路一段153號</div>
           <div class="btns">
+            <div class="ota"><span class="ota-l">訂房比價（已填日子・2人）</span><a class="ota-btn trip" href="https://hk.trip.com/hotels/kaohsiung-hotel-detail-924883/e-da-royal-hotel/?checkIn=2026-11-03&amp;checkOut=2026-11-05&amp;adult=2&amp;crn=1&amp;curr=HKD&amp;locale=zh-HK" target="_blank" rel="noopener">Trip.com</a><a class="ota-btn agoda" href="https://www.agoda.com/zh-hk/e-da-royal-hotel/hotel/kaohsiung-tw.html?checkIn=2026-11-03&amp;los=2&amp;adults=2&amp;rooms=1&amp;currency=HKD" target="_blank" rel="noopener">Agoda</a></div>
             <a class="btn solid" href="https://www.expedia.com.hk/Kaohsiung-Hotels-E-Da-Royal-Hotel.h3430048.Hotel-Information?chkin=2026-11-03&amp;chkout=2026-11-05&amp;rm1=a2" target="_blank" rel="noopener">🛏 訂房</a>
             <a class="btn" href="https://www.edaroyal.com.tw/catalog_room-detail/edaroyalpremierroom/" target="_blank" rel="noopener">官網睇房</a>
             <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%BE%A9%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%85%92%E5%BA%97" target="_blank" rel="noopener">📍 地圖</a>
@@ -298,7 +314,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
         </div>
         <div class="hotel-body">
           <h4>義大天悅飯店 · 菁英雅緻客房</h4>
-          <div class="price">價錢未查<small>公司處理・只作參考，唔計入「錢」 · 今次日子要自己入官網／訂房網睇</small></div>
+          <div class="price">價錢未查<small>今次日子要自己入官網／訂房網睇</small></div>
           <ul class="facts">
             <li><span>🛁</span><span class="warn">官網只寫乾濕分離，有冇浴缸要問</span></li>
             <li><span>📐</span><span>10坪，一大床或兩小床</span></li>
@@ -309,6 +325,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
           </ul>
           <div class="addr">📍 高雄市大樹區三和里義大八街100號</div>
           <div class="btns">
+            <div class="ota"><span class="ota-l">訂房比價（已填日子・2人）</span><a class="ota-btn trip" href="https://hk.trip.com/hotels/kaohsiung-hotel-detail-924860/e-da-skylark-hotel/?checkIn=2026-11-03&amp;checkOut=2026-11-05&amp;adult=2&amp;crn=1&amp;curr=HKD&amp;locale=zh-HK" target="_blank" rel="noopener">Trip.com</a><a class="ota-btn agoda" href="https://www.agoda.com/zh-hk/e-da-skylark-hotel/hotel/kaohsiung-tw.html?checkIn=2026-11-03&amp;los=2&amp;adults=2&amp;rooms=1&amp;currency=HKD" target="_blank" rel="noopener">Agoda</a></div>
             <a class="btn solid" href="https://tlathena.ec-hotel.net/webhotel-v4/0298/index" target="_blank" rel="noopener">🛏 官網訂房</a>
             <a class="btn" href="https://www.edaskylark.com.tw/catalog_room-detail/Eliteelegantroom/" target="_blank" rel="noopener">官網睇房</a>
             <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%BE%A9%E5%A4%A7%E5%A4%A9%E6%82%85%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">📍 地圖</a>
@@ -341,7 +358,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
         </div>
         <div class="hotel-body">
           <h4>葛瑪蘭風呂會館 · 標準雙人房</h4>
-          <div class="price">≈ HK$744／晚<small>公司處理・只作參考，唔計入「錢」 · 2晚 NT$6,170，含早餐連稅 · 29/10 得返 1 間</small></div>
+          <div class="price">≈ HK$744／晚<small>2晚 NT$6,170，含早餐連稅 · 29/10 得返 1 間</small></div>
           <ul class="facts">
             <li><span>♨️</span><span>房內月光石溫泉池</span></li>
             <li><span>📐</span><span>大概 6 坪，一大床</span></li>
@@ -351,6 +368,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
           </ul>
           <div class="addr">📍 宜蘭縣礁溪鄉礁溪路五段97號</div>
           <div class="btns">
+            <div class="ota"><span class="ota-l">訂房比價（已填日子・2人）</span><a class="ota-btn trip" href="https://hk.trip.com/hotels/yilan-hotel-detail-73283282/gamalan-fl-spring-hotel/?checkIn=2026-11-05&amp;checkOut=2026-11-07&amp;adult=2&amp;crn=1&amp;curr=HKD&amp;locale=zh-HK" target="_blank" rel="noopener">Trip.com</a><a class="ota-btn agoda" href="https://www.agoda.com/zh-hk/hefong-resort_2/hotel/yilan-tw.html?checkIn=2026-11-05&amp;los=2&amp;adults=2&amp;rooms=1&amp;currency=HKD" target="_blank" rel="noopener">Agoda</a></div>
             <a class="btn solid" href="https://fl.gamalanhotel.com/?tripla_booking_widget_open=search" target="_blank" rel="noopener">🛏 官網訂房</a>
             <a class="btn" href="https://fl.gamalanhotel.com/portfolio/%E6%A8%99%E6%BA%96%E9%9B%99%E4%BA%BA%E6%88%BF/" target="_blank" rel="noopener">官網睇房</a>
             <a class="btn" href="https://fl.gamalanhotel.com/360tour/%e6%a8%99%e6%ba%96%e9%9b%99%e4%ba%ba%e6%88%bf/" target="_blank" rel="noopener">360° 睇房</a>
@@ -367,7 +385,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
         <div class="nophoto"><div>冇官方相可以擺喺度<br><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E6%97%85%E6%B9%AF%E5%AE%BF%E9%A2%A8%E8%8F%AF%E6%BC%BE%E9%A4%A8" target="_blank" rel="noopener">📷 去 Google Maps 睇相</a></div></div>
         <div class="hotel-body">
           <h4>東旅湯宿 · 風華漾館</h4>
-          <div class="price">≈ NT$2,2xx 起／晚？<small>公司處理・只作參考，唔計入「錢」 · 網上見過嘅起價，今次日子未查</small></div>
+          <div class="price">≈ NT$2,2xx 起／晚？<small>網上見過嘅起價，今次日子未查</small></div>
           <ul class="facts">
             <li><span>♨️</span><span>房內有溫泉池，有啲係露天石池（揀房睇清楚）</span></li>
             <li><span>🍰</span><span>有早餐＋下午茶</span></li>
@@ -377,6 +395,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
           </ul>
           <div class="addr">📍 宜蘭縣礁溪鄉德陽路28號</div>
           <div class="btns">
+            <div class="ota"><span class="ota-l">訂房比價（已填日子・2人）</span><a class="ota-btn trip" href="https://hk.trip.com/hotels/yilan-hotel-detail-52989974/yunoyado-onsen-hotel-deyang-branch/?checkIn=2026-11-05&amp;checkOut=2026-11-07&amp;adult=2&amp;crn=1&amp;curr=HKD&amp;locale=zh-HK" target="_blank" rel="noopener">Trip.com</a><a class="ota-btn agoda" href="https://www.agoda.com/zh-hk/yunoyado-onsen-hotel-deyang-branch/hotel/yilan-tw.html?checkIn=2026-11-05&amp;los=2&amp;adults=2&amp;rooms=1&amp;currency=HKD" target="_blank" rel="noopener">Agoda</a></div>
             <a class="btn solid" href="https://www.tw.kayak.com/%E7%A4%81%E6%BA%AA%E9%84%89-%E9%A3%AF%E5%BA%97-%E6%9D%B1%E6%97%85%E6%B9%AF%E5%AE%BF%E6%BA%AB%E6%B3%89%E9%A3%AF%E5%BA%97-%E9%A2%A8%E8%8F%AF%E6%BC%BE%E9%A4%A8.6395814.ksp" target="_blank" rel="noopener">🛏 比價</a>
             <a class="btn" href="https://travel.yam.com/article/130650" target="_blank" rel="noopener">住過嘅人點講</a>
             <a class="btn" href="tel:+88639888839">📞 03-988-8839</a>
@@ -399,6 +418,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
       <div class="day-body">
         <span class="main">🏎 卡丁車</span>
         <h3>落機 → check in → 揸一節車 → 蒸餃</h3>
+        <div class="day-photos"><figure class="day-photo"><img loading="lazy" src="https://takao-aws.hmgcdn.com/files/article/a0/3216/atl_3216_20240523043155_136.jpg" alt="TKS 橋頭賽車場賽道" onerror="this.closest('.day-photos').remove()"><figcaption>🏁 TKS 橋頭賽車場・1,050 米國際級賽道<small>相：<a href="https://takao.kcg.gov.tw/article/3216" target="_blank" rel="noopener">高雄市政府 TAKAO 樂高雄</a></small></figcaption></figure></div>
         <ul class="tl">
           <li><span class="t">12:00–15:00</span><span>落機、過關、拎行李，搭車去酒店<div class="s">過關拎行李大概 1–1.5 個鐘</div></span></li>
           <li><span class="t">~16:00</span><span><a href="https://www.k1-racing.net/blog/qiaotou-kaohsiung-day-trip" target="_blank" rel="noopener">TKS 橋頭賽車場</a> 玩一節<div class="s">單人車 NT$550／10分鐘 · 要 140cm 以上 · 平日 10:00–18:00 · 先問有冇位</div></span></li>
@@ -414,6 +434,10 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
       <div class="day-body">
         <span class="main">🐢 浮潛</span>
         <h3>去海龜島，天氣好先落水</h3>
+        <div class="day-photos two">
+          <figure class="day-photo"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Total_internal_reflection_of_Chelonia_mydas.jpg/1280px-Total_internal_reflection_of_Chelonia_mydas.jpg" alt="綠蠵龜水底游泳" onerror="this.closest('.day-photo').remove()"><figcaption>🐢 同綠蠵龜一齊游（示意）<small>相：Brocken Inaglory，<a href="https://commons.wikimedia.org/wiki/File:Total_internal_reflection_of_Chelonia_mydas.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></small></figcaption></figure>
+          <figure class="day-photo"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Vase_Rock%2C_Lamay_Island_2015-10-09.jpg/1280px-Vase_Rock%2C_Lamay_Island_2015-10-09.jpg" alt="小琉球花瓶岩，海上有人浮潛" onerror="this.closest('.day-photo').remove()"><figcaption>🪨 花瓶岩・浮潛熱點<small>相：Taiwania Justo，<a href="https://commons.wikimedia.org/wiki/File:Vase_Rock,_Lamay_Island_2015-10-09.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></small></figcaption></figure>
+        </div>
         <ul class="tl">
           <li><span class="t">~08:45</span><span>食完早餐叫車去東港，早 30–40 分鐘換船飛</span></li>
           <li><span class="t">10:30</span><span>東港開船（<a href="https://tfexpress.com.tw/index.html" target="_blank" rel="noopener">泰富航運</a> 淡季班次），到咗喺碼頭附近食晏</span></li>
