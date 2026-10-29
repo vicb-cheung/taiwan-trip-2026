@@ -697,7 +697,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
     set(LS+'share-name',nameIn.value.trim());
     var st=mine();st.n=nameIn.value.trim();st.m=noteIn.value.trim();var d=new Date();st.t=d.getDate()+'/'+(d.getMonth()+1)+' '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);
     var url=location.href.split('#')[0]+'#share='+enc(st),status=document.getElementById('share-status');
-    function copied(){status.textContent='已複製連結，貼去 WhatsApp／Signal 就得。'}
+    function copied(){status.textContent='已複製連結，貼去 WhatsApp 就得。'}
     if(navigator.share){navigator.share({title:document.title,text:(st.n||'我')+' 嘅台灣行程選擇',url:url}).then(function(){status.textContent='已分享。'}).catch(function(){})}
     else if(navigator.clipboard){navigator.clipboard.writeText(url).then(copied,function(){prompt('複製呢條連結：',url)})}
     else prompt('複製呢條連結：',url);
