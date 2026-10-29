@@ -98,6 +98,19 @@ section{scroll-margin-top:60px;margin-top:40px}
 .choose{margin-top:12px;width:100%;border:2px dashed var(--sea);background:transparent;color:var(--sea);border-radius:12px;padding:9px;font:inherit;font-weight:700;cursor:pointer}
 .hotel.chosen .choose{background:var(--sea);color:#fff;border-style:solid}
 
+
+/* ---------- NUK transit callout ---------- */
+.nuk{margin-top:16px;background:var(--paper);border:3px solid var(--sea);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.nuk-h{font-family:"Noto Serif TC",serif;font-weight:900;font-size:1.3rem;color:var(--sea-deep);margin-bottom:10px}
+.nuk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}
+.nuk-opt{position:relative;border:2px solid var(--line);border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:4px;font-size:.9rem;color:var(--muted)}
+.nuk-opt b{color:var(--ink,#222);font-size:1rem}
+.nuk-opt strong{font-size:1.5rem;color:var(--sea-deep);line-height:1.2}
+.nuk-opt.best{border-color:var(--sea);background:var(--sea-soft)}
+.nuk-tag{align-self:flex-start;font-size:.75rem;font-weight:700;border-radius:999px;padding:2px 9px;background:var(--coral-soft);color:#a3401f}
+.nuk-opt.best .nuk-tag{background:var(--sea);color:#fff}
+@media(max-width:600px){.nuk-grid{grid-template-columns:1fr}}
+
 /* ---------- days ---------- */
 .days{display:grid;gap:16px}
 .day{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:120px 1fr;overflow:hidden}
@@ -304,7 +317,15 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
         </div>
       </article>
     </div>
-    <p class="small" style="margin-top:10px">🎓 <b>去高雄大學：</b>兩間都喺義大世界，最實際係叫 Uber／的士，約 30 分鐘，車資估 NT$400–500（按跳錶推算，未核實）；返工時段可能要 40 分鐘以上。公車例子：8506 → 8015，約 1 小時 15 分、NT$78（Google 地圖 29/10 查），班次疏，唔建議趕時間用。<br>B 係 A 冇房時嘅備選。如果一定要浸浴，訂之前打去問：+886-7-6568000。</p>
+    <div class="nuk">
+      <div class="nuk-h">🎓 去國立高雄大學</div>
+      <div class="nuk-grid">
+        <div class="nuk-opt best"><span class="nuk-tag">建議</span><b>🚕 Uber／的士</b><strong>約 30 分鐘</strong><span>車資估 NT$400–500<br>返工時段可能 40 分鐘以上</span></div>
+        <div class="nuk-opt"><span class="nuk-tag">唔建議趕時間用</span><b>🚌 公車</b><strong>約 1 小時 15 分起</strong><span>例：8506 → 8015，NT$78<br>要轉車，班次疏</span></div>
+      </div>
+      <p class="small">兩間酒店都喺義大世界，時間差唔多。車程係 Google 地圖 29/10 查；車資按跳錶推算，未核實。</p>
+    </div>
+    <p class="small" style="margin-top:10px">B 係 A 冇房時嘅備選。如果一定要浸浴，訂之前打去問：+886-7-6568000。</p>
   </div>
 
   <div class="city">
