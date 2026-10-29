@@ -118,6 +118,18 @@ section{scroll-margin-top:60px;margin-top:40px}
 .nuk-opt.best .nuk-tag{background:var(--sea);color:#fff}
 @media(max-width:600px){.nuk-grid{grid-template-columns:1fr}}
 
+.vs{margin-top:16px;background:var(--paper);border:2px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.vs-h{font-family:"Noto Serif TC",serif;font-weight:900;font-size:1.3rem;color:var(--sea-deep);margin-bottom:10px}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vs-col{position:relative;border:2px solid var(--line);border-radius:14px;padding:12px 14px}
+.vs-col.win{border-color:var(--sea);background:var(--sea-soft)}
+.vs-col b{display:block;font-size:1.05rem;margin-bottom:6px}
+.vs-col p{margin:4px 0;font-size:.92rem}
+.vs-col .con{color:#a3401f}
+.vs-tag{position:absolute;top:-10px;right:12px;background:var(--sea);color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:2px 10px}
+.vs-sum{margin:12px 0 0;font-weight:700}
+@media(max-width:600px){.vs-grid{grid-template-columns:1fr}}
+
 /* ---------- days ---------- */
 .days{display:grid;gap:16px}
 .day{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:120px 1fr;overflow:hidden}
@@ -349,6 +361,20 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
         </div>
       </div>
       <p class="small">車程係 Google 地圖 29/10 查；車資按跳錶推算，未核實。</p>
+    </div>
+    <div class="vs">
+      <div class="vs-h">A 定 B？</div>
+      <div class="vs-grid">
+        <div class="vs-col"><b>A · 義大皇家</b>
+          <p class="pro">👍 房大（40㎡）、連早餐、平啲</p>
+          <p class="con">👎 喺大樹，去邊都要叫車</p>
+        </div>
+        <div class="vs-col win"><span class="vs-tag">推介</span><b>B · JÒHŌ</b>
+          <p class="pro">👍 市中心、有捷運，食飯、去東港、去高大都近啲</p>
+          <p class="con">👎 房細（29㎡）、早餐另計</p>
+        </div>
+      </div>
+      <p class="vs-sum">想方便行街食嘢揀 <b>B</b>；想留喺酒店休息浸浴揀 <b>A</b>。</p>
     </div>
     <p class="small" style="margin-top:10px">B 喺市中心高雄車站附近，食嘢方便；A 冇房就訂 B，1/11 前取消免費。</p>
   </div>
