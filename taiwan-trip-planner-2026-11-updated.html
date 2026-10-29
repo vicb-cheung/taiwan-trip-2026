@@ -600,7 +600,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
 </main>
 <button class="share-fab" type="button" id="share-open">📤 分享我嘅選擇</button>
 <dialog class="share-dlg" id="share-make"><div class="share-in">
-  <h3>分享我嘅選擇俾同行者</h3>
+  <h3>分享我嘅選擇</h3>
   <p class="small">會將你揀咗嘅酒店、食物同 checklist 放入一條連結。對方一打開就會彈出嚟睇到。資料只喺連結入面，冇上傳去任何地方。</p>
   <label for="share-name">你個名</label><input id="share-name" maxlength="20" placeholder="例如：阿 Vic">
   <label for="share-note">想講嘅說話（可留空）</label><textarea id="share-note" maxlength="500" placeholder="例如：高雄我想住 A，6/11 晚夜市一齊食龍鳳腿？"></textarea>
@@ -697,7 +697,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
     set(LS+'share-name',nameIn.value.trim());
     var st=mine();st.n=nameIn.value.trim();st.m=noteIn.value.trim();var d=new Date();st.t=d.getDate()+'/'+(d.getMonth()+1)+' '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);
     var url=location.href.split('#')[0]+'#share='+enc(st),status=document.getElementById('share-status');
-    function copied(){status.textContent='已複製連結，貼去 WhatsApp／Signal 俾同行者就得。'}
+    function copied(){status.textContent='已複製連結，貼去 WhatsApp／Signal 就得。'}
     if(navigator.share){navigator.share({title:document.title,text:(st.n||'我')+' 嘅台灣行程選擇',url:url}).then(function(){status.textContent='已分享。'}).catch(function(){})}
     else if(navigator.clipboard){navigator.clipboard.writeText(url).then(copied,function(){prompt('複製呢條連結：',url)})}
     else prompt('複製呢條連結：',url);
