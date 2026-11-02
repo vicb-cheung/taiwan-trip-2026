@@ -228,6 +228,26 @@ section{scroll-margin-top:60px;margin-top:40px}
 .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px}
 .card h3{font-size:1.15rem;margin-bottom:6px}
 .card .k{font-size:.8rem;color:var(--muted);font-weight:700;letter-spacing:.05em}
+/* ---------- transport ---------- */
+.transport-stack{display:grid;gap:14px}
+.transport-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px}
+.transport-card.detail{border-left:5px solid var(--sea)}
+.transport-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;margin-bottom:12px}
+.transport-head h3{font-size:1.22rem}
+.transport-date{display:inline-block;color:var(--sea-deep);font-weight:900;background:var(--sea-soft);border-radius:999px;padding:3px 11px;font-size:.85rem;white-space:nowrap}
+.transport-steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:0;margin:0}
+.transport-steps li{background:#f6f8f5;border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.transport-steps time,.transport-steps .time{display:block;color:var(--sea);font-weight:900;font-size:.85rem}
+.transport-steps b{display:block;line-height:1.35;margin:2px 0}
+.transport-steps small{display:block;color:var(--muted);line-height:1.45}
+.transport-note{margin:12px 0 0;padding:9px 12px;background:var(--sun-soft);border-radius:10px;font-size:.88rem}
+.transport-note b{color:#765008}
+.transport-links{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:.83rem}
+.transport-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.transport-card.compact .transport-steps{grid-template-columns:1fr;gap:5px}
+.transport-card.compact .transport-steps li{display:grid;grid-template-columns:90px 1fr;align-items:start;padding:7px 10px}
+.transport-card.compact .transport-steps b{margin:0}
+@media(max-width:760px){.transport-steps,.transport-pair{grid-template-columns:1fr}.transport-card.compact .transport-steps li{grid-template-columns:80px 1fr}}
 .money{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:8px 20px}
 .money .row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
 .money .row:last-of-type{border:0}
@@ -264,7 +284,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
 @media print{
   body{background:#fff}.topnav,.print,.choose{display:none}
   .hero{min-height:auto}.hero-bg{display:none}.hero::before{background:#1d4e5f;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .hotel,.day,.card{box-shadow:none;break-inside:avoid;border:1px solid var(--line)}
+  .hotel,.day,.card,.transport-card{box-shadow:none;break-inside:avoid;border:1px solid var(--line)}
   .choice.has-choice .hotel:not(.chosen){display:none}
   .gallery{height:160px}
 }
@@ -633,14 +653,50 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
 
 <!-- TRANSPORT -->
 <section id="transport">
-  <div class="sec-head"><h2>交通</h2></div>
-  <div class="grid2">
-    <div class="card"><div class="k">5/11 · JÒHŌ → 東旅湯宿</div><h3>高鐵 + 台鐵</h3><p>JÒHŌ 步行到 R11 高雄車站，搭紅線去 R16 左營，再由高鐵到台北、台鐵到礁溪，最後到已訂的東旅湯宿。中午左右出發，實際車次以訂票為準。</p><div class="btns"><a class="btn solid" href="https://www.thsrc.com.tw/" target="_blank" rel="noopener">高鐵訂票</a><a class="btn" href="https://tip.railway.gov.tw/tra-tip-web/tip/tip001/tip112/querybytime" target="_blank" rel="noopener">台鐵時刻</a></div></div>
-    <div class="card"><div class="k">7/11 · 礁溪 → 桃園機場</div><h3>台鐵 + 機捷</h3><p>14:00 走 → 台北站轉 A1 → 18:00–18:30 到機場。鐵路有事就早啲改搭巴士／叫車。</p><div class="btns"><a class="btn solid" href="https://tip.railway.gov.tw/tra-tip-web/tip/tip001/tip112/querybytime" target="_blank" rel="noopener">台鐵時刻</a></div></div>
-  </div>
-  <div class="grid2" style="margin-top:14px">
-    <div class="card"><div class="k">3/11 · CI934 → 午餐 → JÒHŌ → TKS</div><h3>機場及市內接駁</h3><p>CI934 表定 12:00 抵高雄。國際線行去 R4 6 號入口，紅線往岡山到 R11 高雄車站；先在南站 B2 吃阿蘭古灶肉粽，14:25 左右從 1 號出口步行去 JÒHŌ。15:15 左右再搭 R11→R22 青埔，步行去 TKS。</p><p class="small">R4→R11 車上 18 分鐘；R11→R22 車上 23 分鐘。通關、用餐及候車時間依當日調整；TKS 先確認有位。<a href="https://www.kia.gov.tw/TRANS.html" target="_blank" rel="noopener">機場</a> · <a href="https://www.krtc.com.tw/Guide/time_between_train" target="_blank" rel="noopener">高捷</a> · <a href="https://www.k1-racing.net/circuit" target="_blank" rel="noopener">TKS</a>（2/11 查）</p></div>
-    <div class="card"><div class="k">4/11 · JÒHŌ → 東港 → 小琉球</div><h3>9127D + 泰富</h3><p>07:10 出酒店，R11→R16 左營；高鐵左營站 2 號出口櫃台登記後，1 號月台搭 9127D 08:15→09:05 東琉線碼頭。10:30 泰富去白沙港；13:00 蟹老闆潛店集合（待訂）。17:20 泰富返東港，9127D 18:13 或 18:43 返左營，再轉紅線到 R11。</p><p class="small">9127D 現金 NT$122／人或電子票證 NT$107／人；船兩邊都要提早 30–40 分鐘排隊。17:20 為最後一班，海況／班次出發前再查。<a href="https://www.taiwantrip.com.tw/Frontend/Bustime/TimeTable/R0065" target="_blank" rel="noopener">9127D</a> · <a href="https://www.tfexpress.com.tw/chuanban.html" target="_blank" rel="noopener">泰富</a>（2/11 查）</p></div>
+  <div class="sec-head"><h2>交通</h2><span class="hint">按日子睇路線；時間係規劃，搭車前再核對</span></div>
+  <div class="transport-stack">
+    <article class="transport-card detail">
+      <div class="transport-head"><h3>落機 → 高雄車站 → JÒHŌ → 卡丁車</h3><span class="transport-date">3/11 星期二</span></div>
+      <ol class="transport-steps">
+        <li><time>12:00–13:45</time><b>機場 → R11 高雄車站</b><small>CI934 表定 12:00 到；國際線行去 R4 6 號入口，搭紅線往岡山。R4→R11 車上約 18 分鐘，另預留通關及候車。</small></li>
+        <li><time>13:45–15:15</time><b>站內午餐 → JÒHŌ</b><small>南站 B2 食午餐；約 14:25 從 R11 1 號出口步行去 JÒHŌ，15:00 入住或先寄行李。</small></li>
+        <li><time>15:15–16:15</time><b>R11 → R22 青埔 → TKS</b><small>紅線往岡山，R11→R22 車上約 23 分鐘；青埔站再步行約 15 分鐘。唔好喺 R22A 落。</small></li>
+      </ol>
+      <p class="transport-note"><b>留意：</b>落機或出關延誤，就取消卡丁車；TKS 場次仍要確認。</p>
+      <div class="transport-links"><a href="https://www.kia.gov.tw/TRANS.html" target="_blank" rel="noopener">機場乘車處</a><a href="https://www.krtc.com.tw/Guide/time_between_train" target="_blank" rel="noopener">高捷站間時間</a><a href="https://www.k1-racing.net/circuit" target="_blank" rel="noopener">TKS 交通</a><a href="#food-03">落機午餐</a></div>
+    </article>
+    <article class="transport-card detail">
+      <div class="transport-head"><h3>JÒHŌ → 東港 → 小琉球 → 高雄</h3><span class="transport-date">4/11 星期三</span></div>
+      <ol class="transport-steps">
+        <li><time>07:10–09:05</time><b>R11 → 左營 → 9127D</b><small>紅線到 R16 左營；高鐵站 2 號出口附近登記，1 號月台搭 08:15 巴士，預計 09:05 到東琉線碼頭。</small></li>
+        <li><time>09:05–13:00</time><b>東港 → 白沙港 → 蟹老闆</b><small>泰富櫃台換票，10:30 船往白沙港；食午餐後自行到中山路 2-10 號潛店，13:00 場待確認。</small></li>
+        <li><time>17:20–約20:15</time><b>白沙港 → 東港 → JÒHŌ</b><small>17:20 末班船；9127D 18:13 或較穩妥的 18:43 回左營，再搭紅線到 R11。</small></li>
+      </ol>
+      <p class="transport-note"><b>留意：</b>去回程船都提早 30–40 分鐘排隊；17:20 係末班。船班受海況影響；問清蟹老闆港口至潛店及下水點接駁。9127D 單程電子票證 NT$107／人、現金 NT$122／人。</p>
+      <div class="transport-links"><a href="https://www.taiwantrip.com.tw/Frontend/Bustime/TimeTable/R0065" target="_blank" rel="noopener">9127D 時刻及票價</a><a href="https://www.tfexpress.com.tw/chuanban.html" target="_blank" rel="noopener">泰富船班</a><a href="#food-04">島上及回程食物</a></div>
+    </article>
+    <div class="transport-pair">
+      <article class="transport-card compact">
+        <div class="transport-head"><h3>高雄 → 礁溪</h3><span class="transport-date">5/11 星期四</span></div>
+        <ol class="transport-steps">
+          <li><span class="time">上午</span><b>JÒHŌ → R11 → R16 左營</b></li>
+          <li><span class="time">中午左右</span><b>高鐵左營 → 台北</b></li>
+          <li><span class="time">下午</span><b>台北轉台鐵 → 礁溪 → 東旅湯宿</b></li>
+        </ol>
+        <p class="transport-note">高鐵及台鐵車次以實際訂票為準；台北轉車帶行李至少多留 15 分鐘。</p>
+        <div class="transport-links"><a href="https://www.thsrc.com.tw/" target="_blank" rel="noopener">高鐵訂票</a><a href="https://tip.railway.gov.tw/tra-tip-web/tip/tip001/tip112/querybytime" target="_blank" rel="noopener">台鐵時刻</a></div>
+      </article>
+      <article class="transport-card compact">
+        <div class="transport-head"><h3>礁溪 → 桃園機場</h3><span class="transport-date">7/11 星期六</span></div>
+        <ol class="transport-steps">
+          <li><span class="time">約14:00</span><b>礁溪搭台鐵 → 台北</b></li>
+          <li><span class="time">台北轉車</span><b>步行到 A1，搭機場捷運</b></li>
+          <li><span class="time">18:00–18:30</span><b>目標到桃園機場</b></li>
+        </ol>
+        <p class="transport-note">21:30 航班；鐵路有事就提早改搭巴士或叫車，確保報到時間。</p>
+        <div class="transport-links"><a href="https://tip.railway.gov.tw/tra-tip-web/tip/tip001/tip112/querybytime" target="_blank" rel="noopener">台鐵時刻</a><a href="https://www.tymetro.com.tw/tymetro-new/tw/index.php" target="_blank" rel="noopener">機場捷運</a></div>
+      </article>
+    </div>
   </div>
 </section>
 
