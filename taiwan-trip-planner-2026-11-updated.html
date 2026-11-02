@@ -193,21 +193,35 @@ section{scroll-margin-top:60px;margin-top:40px}
 .food-desc,.food-note{display:block;font-size:.84rem;color:var(--muted);line-height:1.5;margin-top:4px}
 .food-source{display:inline-block;font-size:.78rem;margin-top:7px}
 .food-count{font-weight:700;color:var(--sea-deep)}
-.food-map-wrap{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+.food-map-wrap{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+.food-map-side{min-width:0;display:flex;flex-direction:column;max-height:530px}
+.food-map-side h3{font-size:1.05rem;margin:4px 0 6px}
 #food-map-canvas{height:420px;border-radius:12px;background:#dcece8;z-index:1}
-.food-map-tools{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.food-map-tools{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
 .food-map-tools button{font:inherit;font-size:.85rem;font-weight:700;border:1px solid var(--sea);color:var(--sea);background:#fff;padding:5px 10px;border-radius:999px;cursor:pointer}
 .food-map-tools button:hover{background:var(--sea-soft)}
-.food-map-list{margin:12px 0 0;padding-left:20px;font-size:.87rem}
+.food-map-list{flex:1;min-height:0;overflow-y:auto;margin:0;padding:0 6px 0 22px;font-size:.87rem}
 .food-map-list li{break-inside:avoid;margin:0 0 5px}
 .food-map-list small{color:var(--muted)}
-.food-map-list .map-day{break-after:avoid;list-style:none;margin:10px 0 7px -20px;color:var(--sea-deep);font-weight:800;font-size:1rem}
-.rec-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
-.rec-item{border:1px solid var(--line);border-left:5px solid #9a9da3;border-radius:9px;padding:9px 11px;background:#fff;font-size:.87rem}
-.rec-item.rec-2{border-left-color:#168778;background:#f0fbf8}.rec-item.rec-3{border-left-color:#d59a20;background:#fff9e9}
-.rec-item strong{display:block}.rec-item small{display:block;color:var(--muted);margin-top:3px}.rec-icons{white-space:nowrap;font-size:.8rem}
-.rec-legend{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0}.rec-legend span{border-radius:999px;padding:3px 8px;font-size:.78rem;font-weight:700}
-.rec-legend .rec-1{background:#e8e9eb;color:#4e5258}.rec-legend .rec-2{background:#d8f1e9;color:#106c5d}.rec-legend .rec-3{background:#ffedbd;color:#865900}
+.food-map-list .map-day{break-after:avoid;list-style:none;margin:10px 0 7px -22px;color:var(--sea-deep);font-weight:800;font-size:1rem}
+.rec-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.rec-filter button{font:inherit;font-size:.88rem;font-weight:700;border:1px solid var(--line);color:inherit;background:var(--paper);padding:6px 12px;border-radius:999px;cursor:pointer}
+.rec-filter button[aria-pressed="true"]{background:var(--sea);border-color:var(--sea);color:#fff}
+.rec-block{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;margin-bottom:14px}
+.rec-block>h3,.rec-block>summary{font-size:1.1rem;font-weight:800;color:var(--sea-deep)}
+.rec-block>summary{cursor:pointer}
+.rec-block>summary small{font-weight:500;color:var(--muted);font-size:.84rem;margin-left:6px}
+.rec-group{margin-top:12px}
+.rec-group h4{font-size:.98rem;margin:0}
+.rec-group>small{display:block;color:var(--muted);font-size:.82rem;margin-top:2px}
+.rec-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;margin-top:6px}
+.rec-row{padding:7px 0;border-bottom:1px dashed var(--line);font-size:.92rem;min-width:0}
+.rec-name{font-weight:700;margin-right:6px}
+.rec-tag{display:inline-block;font-size:.72rem;font-weight:700;border-radius:999px;padding:1px 7px;margin-right:3px;white-space:nowrap;background:#ededf0;color:#4e5258;text-decoration:none}
+.rec-tag.threads{background:#e7e4f7;color:#4d3f96}
+.rec-tag.friend{background:#d8f1e9;color:#106c5d}
+.rec-tag.multi{background:#ffedbd;color:#865900}
+.rec-row small{display:block;color:var(--muted);font-size:.8rem;margin-top:2px}
 .rec-map-pin{width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid #168778;text-align:center;line-height:18px;font-size:12px;box-shadow:0 2px 5px #27334a55}
 .leaflet-tooltip.rec-map-label{background:#fff;color:#146b60;border:1px solid #168778;border-radius:7px;padding:3px 6px;font-weight:700;font-size:.75rem}
 .leaflet-popup-content{font-family:"Noto Sans TC",sans-serif;line-height:1.6}
@@ -216,7 +230,7 @@ section{scroll-margin-top:60px;margin-top:40px}
 .leaflet-tooltip.drink-map-label{background:#fff;color:#563879;border:1px solid #7655a3;border-radius:7px;padding:3px 6px;font-weight:700;font-size:.77rem;box-shadow:0 2px 6px #27334a33}
 .leaflet-tooltip.drink-map-label:before{display:none}
 #food-map-canvas.drink-labels-hidden .drink-map-label,#food-map-canvas.drink-labels-hidden .rec-map-label{display:none}
-@media(max-width:700px){.food-map-list{columns:1}.rec-list{grid-template-columns:1fr}#food-map-canvas{height:360px}}
+@media(max-width:800px){.food-map-wrap{grid-template-columns:1fr}.food-map-side{max-height:none}.food-map-list{overflow:visible}.rec-rows{grid-template-columns:1fr}#food-map-canvas{height:360px}}
 @media(max-width:700px){.food-grid{grid-template-columns:1fr}}
 @media print{.food-card:not(:has(input:checked)){display:none}}
 
@@ -324,7 +338,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
 </header>
 
 <nav class="topnav" aria-label="頁內導航"><div class="wrap">
-  <a href="#todo">要做嘅嘢</a><a href="#hotels">已訂酒店</a><a href="#days">每日</a><a href="#food">食物多選</a><a href="#drinks">🧋 茶飲</a><a href="#food-map">美食地圖</a><a href="#transport">交通</a><a href="#budget">錢</a><a href="#prep">執嘢</a><a href="#sos">出事點算</a>
+  <a href="#todo">要做嘅嘢</a><a href="#hotels">已訂酒店</a><a href="#days">每日</a><a href="#food">食物多選</a><a href="#drinks">🧋 茶飲</a><a href="#food-map">美食地圖</a><a href="#recs">👥 推介</a><a href="#transport">交通</a><a href="#budget">錢</a><a href="#prep">執嘢</a><a href="#sos">出事點算</a>
 </div></nav>
 
 <main class="wrap">
@@ -679,18 +693,27 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
 
 <!-- FOOD MAP -->
 <section id="food-map">
-  <div class="sec-head"><h2>美食＋茶飲地圖</h2><span class="hint">按日期排列；飲品及推介來源有獨立標記</span></div>
+  <div class="sec-head"><h2>美食＋茶飲地圖</h2></div>
   <div class="food-map-wrap">
-    <div id="food-map-canvas" role="img" aria-label="台灣旅程美食位置地圖"></div>
-    <div class="food-map-tools"><button type="button" data-map-area="all">全部</button><button type="button" data-map-area="kaohsiung">高雄</button><button type="button" data-map-area="island">小琉球</button><button type="button" data-map-area="yilan">宜蘭</button></div>
-    <p class="small">🧋 奶茶、🍊 水果茶、🍯 冬瓜茶用紫框；✦ 係沿線推介。放大至街道比例可睇店名標籤。實心釘是可核實店址或景點；空心釘及部分飲品釘係區域中心，並非店門。按店名會開 Google Maps。夜市攤檔以市場入口作位置釘。</p>
-    <ol id="food-map-list" class="food-map-list"></ol>
-    <h3>朋友＋脆友推介</h3>
-    <p class="small">按日子及推介來源數排列。原行程、朋友名單、脆友帖文係三個來源；同店有三方推介排最前，其次兩方、單一來源。灰＝一方，綠＝兩方，金＝三方。只有沿線可考慮的店加 ✦ 地圖釘；「鹽埕」要從紅線轉橘線去 O2，須視乎 4/11 返港時間，唔當作必到。</p>
-    <div class="rec-legend"><span class="rec-1">1 方推介</span><span class="rec-2">2 方推介</span><span class="rec-3">3 方推介</span><span>📍 原行程</span><span>👥 朋友</span><span>🧵 脆友</span></div>
-    <div id="rec-list" class="rec-list"></div>
-    <noscript>開啟 JavaScript 可查看美食地圖和店舖連結。</noscript>
+    <div class="food-map-main">
+      <div class="food-map-tools"><button type="button" data-map-area="all">全部</button><button type="button" data-map-area="kaohsiung">高雄</button><button type="button" data-map-area="island">小琉球</button><button type="button" data-map-area="yilan">宜蘭</button></div>
+      <div id="food-map-canvas" role="img" aria-label="台灣旅程美食位置地圖"></div>
+      <p class="small">🧋 奶茶 · 🍊 水果茶 · 🍯 冬瓜茶 · ✦ 朋友推介（順路）· 實心＝店址，空心＝區域（唔係店門）· 放大先見店名</p>
+    </div>
+    <div class="food-map-side">
+      <h3>📅 按日子</h3>
+      <ol id="food-map-list" class="food-map-list"></ol>
+    </div>
   </div>
+  <noscript>開啟 JavaScript 可查看美食地圖和店舖連結。</noscript>
+</section>
+
+<!-- RECOMMENDATIONS -->
+<section id="recs">
+  <div class="sec-head"><h2>👥 朋友＋脆友推介</h2></div>
+  <div class="rec-filter" id="rec-filter" role="group" aria-label="篩選推介來源"></div>
+  <div id="rec-list"></div>
+  <p class="small rec-empty" id="rec-empty" hidden>冇符合嘅推介</p>
 </section>
 
 <!-- TRANSPORT -->
@@ -848,23 +871,69 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
     if(f.date!==lastFoodDate){var day=document.createElement('li');day.className='map-day';day.value=0;day.textContent=Number(f.date.slice(-2))+'/11 · '+({'03':'高雄抵埗','04':'小琉球／返高雄','05':'前往礁溪','06':'宜蘭','07':'離開前'}[f.date.slice(-2)]||'');mapList.appendChild(day);lastFoodDate=f.date}
     var li=document.createElement('li'),a=document.createElement('a'),small=document.createElement('small');
     a.href=mapLink(f);a.target='_blank';a.rel='noopener';a.textContent=(f.category==='drink'?(f.drinkType==='wintermelon'?'🍯 ':f.drinkType==='fruit'?'🍊 ':'🧋 '):'')+f.name;
-    small.textContent=' · '+Number(f.date.slice(-2))+'/11 '+f.meal;
+    small.textContent=' · '+f.meal;
     li.appendChild(a);li.appendChild(small);mapList.appendChild(li);
     var card=document.querySelector('#food input[data-food-id="'+f.id+'"]').closest('.food-card');
     var pin=document.createElement('a');pin.className='food-source';pin.href=mapLink(f);pin.target='_blank';pin.rel='noopener';pin.textContent=' · 📍 Google 地圖';
     pin.addEventListener('click',function(e){e.stopPropagation()});card.querySelector('.food-source').after(pin);
   });
-  var recList=document.getElementById('rec-list');
-  var recOrder=trip.recommendations.slice().sort(function(a,b){return (a.date||'9999').localeCompare(b.date||'9999')||b.sources.length-a.sources.length||a.name.localeCompare(b.name,'zh-Hant')});
-  recOrder.forEach(function(r){
-    var card=document.createElement('div');card.className='rec-item rec-'+r.sources.length;
-    var title=document.createElement('strong'),icons=document.createElement('span');icons.className='rec-icons';
-    icons.textContent=r.sources.map(function(s){return s==='friend'?'👥':s==='threads'?'🧵':'📍'}).join(' ')+' ';
-    title.appendChild(icons);title.appendChild(document.createTextNode(r.name));card.appendChild(title);
-    var note=document.createElement('small');note.textContent=(r.date?Number(r.date.slice(-2))+'/11 · ':'另外安排 · ')+r.area+' · '+r.route.replace(/^\d+\/11 /,'');card.appendChild(note);
-    var link=document.createElement('a');link.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(r.name+' 高雄 '+r.area);link.target='_blank';link.rel='noopener';link.textContent='📍 Google 地圖 ↗';card.appendChild(link);
-    if(r.threadUrl){var source=document.createElement('a');source.href=r.threadUrl;source.target='_blank';source.rel='noopener';source.textContent=' · 🧵 脆友原帖 ↗';card.appendChild(source)}
-    recList.appendChild(card);
+  // Recommendations: what fits the route first, detours by area after; one row per shop.
+  var recList=document.getElementById('rec-list'),recEmpty=document.getElementById('rec-empty'),recFilter=document.getElementById('rec-filter');
+  var recLabel={friend:'👥 朋友',threads:'🧵 脆友',itinerary:'📍 原行程'};
+  function isYancheng(r){return r.area==='鹽埕'||/鹽埕/.test(r.route)}
+  function recSort(a,b){return b.sources.length-a.sources.length||a.name.localeCompare(b.name,'zh-Hant')}
+  function recRow(r,showNote){
+    var row=document.createElement('div');row.className='rec-row';row.dataset.sources=r.sources.join(' ');
+    var name=document.createElement('a');name.className='rec-name';name.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(r.name+' 高雄 '+r.area);name.target='_blank';name.rel='noopener';name.textContent=r.name;row.appendChild(name);
+    if(r.sources.length>1){var multi=document.createElement('span');multi.className='rec-tag multi';multi.textContent='⭐ '+r.sources.length+' 方推介';row.appendChild(multi)}
+    r.sources.forEach(function(k){
+      var tag=document.createElement(k==='threads'&&r.threadUrl?'a':'span');tag.className='rec-tag '+k;tag.textContent=recLabel[k]+(k==='threads'&&r.threadUrl?'原帖':'');
+      if(tag.tagName==='A'){tag.href=r.threadUrl;tag.target='_blank';tag.rel='noopener'}
+      row.appendChild(tag);
+    });
+    if(showNote){var note=document.createElement('small');note.textContent=r.route.replace(/^\d+\/11 /,'');row.appendChild(note)}
+    return row;
+  }
+  function recGroup(parent,title,note,items,showNote){
+    if(!items.length)return;
+    var g=document.createElement('div');g.className='rec-group';
+    var h=document.createElement('h4');h.textContent=title;g.appendChild(h);
+    if(note){var n=document.createElement('small');n.textContent=note;g.appendChild(n)}
+    var rows=document.createElement('div');rows.className='rec-rows';
+    items.slice().sort(recSort).forEach(function(r){rows.appendChild(recRow(r,showNote))});
+    g.appendChild(rows);parent.appendChild(g);
+  }
+  var recs=trip.recommendations,onRoute=recs.filter(function(r){return r.date}),detour=recs.filter(function(r){return !r.date});
+  var routeBlock=document.createElement('div');routeBlock.className='rec-block';
+  var routeHead=document.createElement('h3');routeHead.textContent='順路：可以排入行程（'+onRoute.length+'）';routeBlock.appendChild(routeHead);
+  recGroup(routeBlock,'3/11 · 美麗島／六合','',onRoute.filter(function(r){return r.date==='2026-11-03'}),true);
+  recGroup(routeBlock,'4/11 · 返高雄途中','',onRoute.filter(function(r){return r.date==='2026-11-04'&&!isYancheng(r)}),true);
+  recGroup(routeBlock,'4/11 · 鹽埕','要早返港，再轉橘線去 O2；星期三營業先查',onRoute.filter(function(r){return r.date==='2026-11-04'&&isYancheng(r)}),false);
+  recList.appendChild(routeBlock);
+  var detourBlock=document.createElement('details');detourBlock.className='rec-block';
+  var detourHead=document.createElement('summary');detourHead.innerHTML='要繞路：有時間先去（'+detour.length+'）<small>按地區</small>';detourBlock.appendChild(detourHead);
+  var areaCount={};detour.forEach(function(r){areaCount[r.area]=(areaCount[r.area]||0)+1});
+  // "高雄" means the source named no district, so it stays last.
+  Object.keys(areaCount).sort(function(a,b){return (a==='高雄')-(b==='高雄')||areaCount[b]-areaCount[a]}).forEach(function(area){
+    recGroup(detourBlock,area==='高雄'?'未分區':area,'',detour.filter(function(r){return r.area===area}),false);
+  });
+  recList.appendChild(detourBlock);
+  window.addEventListener('beforeprint',function(){detourBlock.open=true});
+  var recFilters=[['all','全部',function(){return true}],['friend','👥 朋友',function(r){return r.sources.indexOf('friend')>=0}],['threads','🧵 脆友',function(r){return r.sources.indexOf('threads')>=0}],['multi','⭐ 多方推介',function(r){return r.sources.length>1}]];
+  recFilters.forEach(function(f){
+    var b=document.createElement('button');b.type='button';b.textContent=f[1]+' '+recs.filter(f[2]).length;b.dataset.filter=f[0];b.setAttribute('aria-pressed',f[0]==='all'?'true':'false');
+    b.addEventListener('click',function(){
+      recFilter.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      var shown=0;
+      recList.querySelectorAll('.rec-row').forEach(function(row){
+        var src=row.dataset.sources.split(' '),on=f[0]==='all'||(f[0]==='multi'?src.length>1:src.indexOf(f[0])>=0);
+        row.hidden=!on;if(on)shown++;
+      });
+      recList.querySelectorAll('.rec-group,.rec-block').forEach(function(g){g.hidden=!g.querySelector('.rec-row:not([hidden])')});
+      recEmpty.hidden=shown>0;
+      if(f[0]!=='all')detourBlock.open=true;
+    });
+    recFilter.appendChild(b);
   });
   if(window.L){
     var foodMap=L.map('food-map-canvas',{scrollWheelZoom:false}).setView([23.5,121],7);
